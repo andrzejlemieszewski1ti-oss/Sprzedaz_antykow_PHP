@@ -1,0 +1,20 @@
+kw1:
+
+select idMeble, nazwa, plik, styl, cena, opis from meble
+where kategoria = 1
+
+kw2:
+insert into zakupy (idKlienci, idMeble, sztuk) VALUES (1,6,1)
+
+kw3:
+select nazwa, cena from meble
+join zakupy
+on meble.idMeble=zakupy.idMeble
+where idKlienci = 1 
+
+kw4:
+select meble.nazwa, klienci.imie, klienci.nazwisko from meble
+join zakupy
+on meble.idMeble=zakupy.idMeble
+join klienci
+on zakupy.idKlienci=klienci.idKlienci
